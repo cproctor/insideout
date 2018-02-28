@@ -20,24 +20,29 @@ class APIModel(models.Model):
     An abstract class which allows us to implement some useful functionality
     once instead of repeating. 
     """
-    json_props = feelings + ['name', 'pet_name']
-    name = models.CharField(unique=True, max_length=100)
+    name = models.CharField(max_length=100)
     secret = models.CharField(unique=True, max_length=100)
 
     @classmethod
     def generate_secret(cls):
         "Creates a secret number to use as a pid, etc. Checks for uniqueness."
         while True:
-            secret = "".join(str(randint(1, 10)) for _ in range(6))
-            if cls.objects.filter(secret=secret).count() == 0:
-                return id
+            secret = "".join(str(randint(1, 9)) for _ in range(6))
+            if not cls.objects.filter(secret=secret).exists():
+                print(secret)
+                return secret
 
-    def to_json(self):
+    def to_json(self, private=False):
         "Returns the object's properties ready for dumping to json"
-        return {attr : getattr(self, attr) for attr in self.json_attrs}
+        if private:
+            return {attr : getattr(self, attr) for attr in self.gettable_attributes}
+        else:
+            return {attr : getattr(self, attr) for attr in self.gettable_attributes if attr != 'secret'}
 
 class Classroom(APIModel):
     "Represents a classroom of people. Has attributes which average the attributes of the people."
+    gettable_attributes = feelings + ['name', 'secret', 'people_json']
+    settable_attributes = ['name']
     pet_name = models.CharField(max_length=100)
 
     def average(self, attribute):
@@ -76,23 +81,28 @@ class Classroom(APIModel):
     def sadness_outside(self):
         return self.average('sadness_outside')
 
+    @property
+    def people_json(self):
+        return [p.to_json() for p in self.people.all()]
+
 class Person(APIModel):
     "Represents an individual person"
-    json_props = feelings + ['name', 'pet_name']
+    gettable_attributes = feelings + ['name', 'pet_name', 'secret']
+    settable_attributes = feelings
 
     pet_name = models.CharField(max_length=100)
     group = models.ForeignKey(Classroom, blank=True, null=True, related_name='people', 
             on_delete='cascade')
-    anger_inside = models.IntegerField()
-    anger_outside = models.IntegerField()
-    joy_inside = models.IntegerField()
-    joy_outside = models.IntegerField()
-    fear_inside = models.IntegerField()
-    fear_outside = models.IntegerField()
-    disgust_inside = models.IntegerField()
-    disgust_outside = models.IntegerField()
-    sadness_inside = models.IntegerField()
-    sadness_outside = models.IntegerField()
+    anger_inside = models.IntegerField(default=0)
+    anger_outside = models.IntegerField(default=0)
+    joy_inside = models.IntegerField(default=0)
+    joy_outside = models.IntegerField(default=0)
+    fear_inside = models.IntegerField(default=0)
+    fear_outside = models.IntegerField(default=0)
+    disgust_inside = models.IntegerField(default=0)
+    disgust_outside = models.IntegerField(default=0)
+    sadness_inside = models.IntegerField(default=0)
+    sadness_outside = models.IntegerField(default=0)
 
     
     

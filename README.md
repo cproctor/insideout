@@ -46,7 +46,6 @@ Avatar:
 /players/PID/petID/play
 /players/PID/petID/water
 
-
 Classroom:
 /classroom/CID (seeing everyone who's in there)
 /players/PID/classroom/new (Teacher is setting up a new classroom)
