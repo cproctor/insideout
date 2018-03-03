@@ -25,6 +25,7 @@ urlpatterns = [
     path('people/new/<name>', views.CreatePersonView.as_view(), name='new_person'),
     path('people/<secret>', views.ShowPersonView.as_view(), name='show_person'),
     path('people/<secret>/set/<attribute>/<int:value>', views.UpdatePersonView.as_view(), name='update_person'),
+    path('classrooms/<secret>/set/<attribute>/<int:value>', views.UpdateClassroomView.as_view(), name='update_classroom'),
     path('classrooms/new/<name>', views.CreateClassroomView.as_view(), name='new_classroom'),
     path('classrooms/<secret>', views.ShowClassroomView.as_view(), name='show_classroom'),
     path('people/<secret>/classroom/<parent_secret>/join', views.AddPersonToClassroomView.as_view(), name='add_player_to_classroom')

@@ -58,6 +58,9 @@ class CreatePersonView(CreateModelView):
 class UpdatePersonView(UpdateModelView):
     model = Person
 
+class UpdateClassroomView(UpdateModelView):
+    model = Classroom
+
 class CreateClassroomView(CreateModelView):
     model = Classroom
 
