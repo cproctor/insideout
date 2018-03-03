@@ -41,9 +41,12 @@ class APIModel(models.Model):
 
 class Classroom(APIModel):
     "Represents a classroom of people. Has attributes which average the attributes of the people."
-    gettable_attributes = feelings + ['name', 'secret', 'people_json']
-    settable_attributes = ['name']
+    gettable_attributes = feelings + ['name', 'secret', 'people_json', 'food','water','play']
+    settable_attributes = ['name','food','water','play']
     pet_name = models.CharField(max_length=100)
+    water = models.IntegerField(default=0)
+    food = models.IntegerField(default=0)
+    play = models.IntegerField(default=0)
 
     def average(self, attribute):
         if self.people.exists():
@@ -87,10 +90,10 @@ class Classroom(APIModel):
 
 class Person(APIModel):
     "Represents an individual person"
-    gettable_attributes = feelings + ['name', 'pet_name', 'secret']
+    gettable_attributes = feelings + ['name', 'secret']
     settable_attributes = feelings
 
-    pet_name = models.CharField(max_length=100)
+    
     group = models.ForeignKey(Classroom, blank=True, null=True, related_name='people', 
             on_delete='cascade')
     anger_inside = models.IntegerField(default=0)
