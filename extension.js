@@ -168,7 +168,7 @@ var NOT_IMPLEMENTED = function() {};
             ['w', "sign up as teacher %n", 'new_teacher','name'], // teacher-only
             ['w', "sign up as %n", 'new_person','name'],
             ['w', "sign in as %s", 'get_person'],
-            ['w', "set average %m.attribute %m.in_out to %n for avatar %n", 'update_person', joy, 'inside', 5],
+            ['w', "set average %m.attribute %m.in_out to %n for avatar %n", 'update_person', 'joy', 'inside', 5],
         ],
     
         menus: {
