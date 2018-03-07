@@ -149,7 +149,7 @@ var NOT_IMPLEMENTED = function() {};
             // pet
             ['r', '%m.petneeds_noun levels', 'get_pet_needs','food'],
             ['r', 'pet name', 'get_pet_name'],
-            ['w', "give %n units of %m.petneeds_noun to pet in classroom %n", 1, 'food'], 
+            ['w', "give %n units of %m.petneeds_noun to pet in classroom %n", 'update_pet', 1, 'food'], 
             ['w', "name classroom pet %n", 'set_pet_name','name'], // teacher-only
             ['w', "add %m.petneeds_noun need at %m.times", 'add_pet_need', 'food', '2pm'], // teacher-only
             ['w', "switch %m.petneeds_noun need %m.on_off", 'switch_pet_needs', 'food', 'on'], // teacher-only
