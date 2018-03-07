@@ -61,7 +61,7 @@ InsideOutApi.prototype = {
         this.fetch_person(url, callback);
     },
     update_person: function(secret, attribute, value) {
-        var url = this.get_url('update_person': {'secret': secret, 'attribute': attribute, 'value': value});
+        var url = this.get_url('update_person', {'secret': secret, 'attribute': attribute, 'value': value});
         this.fetch_person(url, callback);
     },
     new_classroom: function(name, callback) {
