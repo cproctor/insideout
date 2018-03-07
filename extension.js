@@ -10,7 +10,7 @@ InsideOutApi.prototype = {
         'new_classroom': 'classrooms/new/{name}',
         'get_classroom': 'classrooms/{secret}',
         'update_classroom': 'classrooms/{secret}/set/{attribute}/{value}',
-        'add_player_to_classroom': 'people/{secret}/classroom/{parent_secret}/join'
+        'add_person_to_classroom': 'people/{secret}/classroom/{parent_secret}/join'
     },
 
     // Gets the right URL template and then fills in the placeholders
@@ -135,7 +135,7 @@ var NOT_IMPLEMENTED = function() {};
             // classroom
             ['b', 'avatar ok', 'person_ok'],
             ['b', 'classroom ok', 'classroom_ok'],
-            ['r', 'player error message', 'player_error_message'],
+            ['r', 'person error message', 'person_error_message'],
             ['r', 'classroom error message', 'classroom_error_message'],
             ['r', 'classroom name', 'classroom_name'],
             ['r', 'classroom id', 'classroom_secret'],
