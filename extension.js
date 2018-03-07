@@ -73,11 +73,11 @@ InsideOutApi.prototype = {
         this.fetch_classroom(url, callback);
     },
     update_classroom: function(secret, attribute, value) {
-        var url = this.get_url('update_classroom': {'secret': secret, 'attribute': attribute, 'value': value});
+        var url = this.get_url('update_classroom', {'secret': secret, 'attribute': attribute, 'value': value});
         this.fetch_classroom(url, callback);
     },
     add_person_to_classroom(secret, parent_secret) {
-        var url = this.get_url('add_person_to_classroom': {'secret': secret, 'parent_secret': parent_secret});
+        var url = this.get_url('add_person_to_classroom', {'secret': secret, 'parent_secret': parent_secret});
         this.fetch_classroom(url, callback);
     }
 }
