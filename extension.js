@@ -53,7 +53,7 @@ InsideOutApi.prototype = {
         })
     },
     new_person: function(name, callback) {
-        var url = this.get_url('new_player', {'name': name});
+        var url = this.get_url('new_person', {'name': name});
         this.fetch_person(url, callback);
     },
     get_person: function(secret, callback) {
@@ -65,7 +65,7 @@ InsideOutApi.prototype = {
         this.fetch_person(url, callback);
     },
     new_classroom: function(name, callback) {
-        var url = this.get_url('new_player', {'name': name});
+        var url = this.get_url('new_classroom', {'name': name});
         this.fetch_classroom(url, callback);
     },
     get_classroom: function(secret, callback) {
