@@ -86,7 +86,7 @@ class Classroom(APIModel):
 
     @property
     def people_json(self):
-        return [p.to_json() for p in self.people.all()]
+        return [p.to_json(private=True) for p in self.people.all()]
 
 class Person(APIModel):
     "Represents an individual person"
