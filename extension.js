@@ -156,7 +156,7 @@ var NOT_IMPLEMENTED = function() {};
             ['r', 'classroom name', 'classroom_name'],
             ['r', 'classroom id', 'classroom_secret'],
             ['r', 'average %m.attribute %m.in_out for classroom', 'get_classroom_feelings','joy','inside'] ,
-			['r', '%m.attribute %m.in_out for person', 'get_avatar_feelings','joy','inside'] ,
+			['r', '%m.attribute %m.in_out', 'get_avatar_feelings','joy','inside'] ,
             ['w', "start new classroom %s", 'new_classroom'], // teacher-only
             ['w', "%n enters classroom %n", 'add_person_to_classroom'],
             ['w', "show classroom %n", 'get_classroom'], 
