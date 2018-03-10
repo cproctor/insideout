@@ -136,7 +136,7 @@ var NOT_IMPLEMENTED = function() {};
     // avatar
     ext.get_avatar_name = function() { return api.person ? api.person.name : ''; }
     ext.get_avatar_secret = function() { return api.person ? api.person.secret : ''; }
-    ext.get_person_feelings = function(feel, inout) { return api.person ? api.person[feel+'_'+inout] : ''; }
+    ext.get_avatar_feelings = function(feel, inout) { return api.person ? api.person[feel+'_'+inout] : ''; }
     ext.new_teacher = NOT_IMPLEMENTED;
     ext.new_person = api.new_person.bind(api);
     ext.get_person = api.get_person.bind(api);
