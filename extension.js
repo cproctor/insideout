@@ -136,11 +136,13 @@ var NOT_IMPLEMENTED = function() {};
     // avatar
     ext.get_avatar_name = function() { return api.person ? api.person.name : ''; }
     ext.get_avatar_secret = function() { return api.person ? api.person.secret : ''; }
-    ext.get_avatar_feelings = function(feel, inout) { return api.person ? api.person[feel+'_'+inout] : ''; }
+    ext.get_person_feelings = function(feel, inout) { return api.person ? api.person[feel+'_'+inout] : ''; }
     ext.new_teacher = NOT_IMPLEMENTED;
     ext.new_person = api.new_person.bind(api);
     ext.get_person = api.get_person.bind(api);
     ext.update_person = function(feel, inout, value, secret) { api.update_person(secret, feel+'_'+inout, value);}
+	ext.get_classrom_feelings = function(feel, inout) { return api.classroom ? api.classroom[feel+'_'+inout] : ''; }
+	
 
     // Block and block menu descriptions
     var descriptor = {
@@ -153,7 +155,8 @@ var NOT_IMPLEMENTED = function() {};
             ['r', 'classroom error message', 'classroom_error_message'],
             ['r', 'classroom name', 'classroom_name'],
             ['r', 'classroom id', 'classroom_secret'],
-            ['r', 'average %m.attribute %m.in_out for classroom', 'get_average_feelings','joy','inside'] ,
+            ['r', 'average %m.attribute %m.in_out for classroom', 'get_classroom_feelings','joy','inside'] ,
+			['r', '%m.attribute %m.in_out for person', 'get_person_feelings','joy','inside'] ,
             ['w', "start new classroom %s", 'new_classroom'], // teacher-only
             ['w', "%n enters classroom %n", 'add_person_to_classroom'],
             ['w', "show classroom %n", 'get_classroom'], 
@@ -179,11 +182,12 @@ var NOT_IMPLEMENTED = function() {};
             // 2. avatar-program
             ['r', 'avatar name', 'get_avatar_name'],
             ['r', 'avatar id', 'get_avatar_secret'],
-            ['r', 'average %m.attribute _ %m.in_out','get_avatar_feelings','joy','inside'],
+            ['r', '%m.attribute _ %m.in_out','get_avatar_feelings','joy','inside'],
             ['w', "sign up as teacher %n", 'new_teacher','name'], // teacher-only
             ['w', "sign up as %s", 'new_person','name'],
             ['w', "sign in as %n", 'get_person'],
             ['w', "set %m.attribute %m.in_out to %n for avatar %n", 'update_person', 'joy', 'inside', 5],
+			
         ],
     
         menus: {
