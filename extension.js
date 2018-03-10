@@ -136,7 +136,7 @@ var NOT_IMPLEMENTED = function() {};
     // avatar
     ext.get_avatar_name = function() { return api.person ? api.person.name : ''; }
     ext.get_avatar_secret = function() { return api.person ? api.person.secret : ''; }
-    ext.get_avatar_feelings = function(feel, inout) { return api.person ? api.person[feel+'_'+inout] : ''; }
+    ext.get_person_feelings = function(feel, inout) { return api.person ? api.person[feel+'_'+inout] : ''; }
     ext.new_teacher = NOT_IMPLEMENTED;
     ext.new_person = api.new_person.bind(api);
     ext.get_person = api.get_person.bind(api);
@@ -182,7 +182,6 @@ var NOT_IMPLEMENTED = function() {};
             // 2. avatar-program
             ['r', 'avatar name', 'get_avatar_name'],
             ['r', 'avatar id', 'get_avatar_secret'],
-            ['r', '%m.attribute _ %m.in_out','get_avatar_feelings','joy','inside'],
             ['w', "sign up as teacher %n", 'new_teacher','name'], // teacher-only
             ['w', "sign up as %s", 'new_person','name'],
             ['w', "sign in as %n", 'get_person'],
