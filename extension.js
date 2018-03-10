@@ -103,7 +103,20 @@ var NOT_IMPLEMENTED = function() {};
     ext.get_classroom = api.get_classroom.bind(api);
     ext.update_classroom = api.get_classroom.bind(api);
     ext.exit_classroom = NOT_IMPLEMENTED;
-
+	ext.get_student_ID_string = function() { 
+	if (!api.clasroom) {
+		return "";
+	}
+	if (api.classroom.people_json.length == 0){
+		return "";
+	}
+	var string= "";
+	for (var person in api.classroom.person_json)
+		string= string+person.secret;
+	}
+	return string;
+	}
+	
     // pet
     ext.get_pet_needs = function(need) { return api.classroom ? api.classroom[need] : ''; }
     ext.get_pet_name = function() { return api.classroom ? api.classroom.pet_name : ''; }
@@ -145,7 +158,7 @@ var NOT_IMPLEMENTED = function() {};
             ['w', "show classroom %n", 'get_classroom'], 
             ['w', "update all feelings in classroom %n", 'update_classroom'],
             ['w', "exit classroom %n", 'exit_classroom'],
-
+			['r', 'student ID string', 'get_student_ID_string'],
             // pet
             ['r', '%m.petneeds_noun levels', 'get_pet_needs','food'],
             ['r', 'pet name', 'get_pet_name'],
