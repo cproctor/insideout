@@ -141,7 +141,7 @@ var NOT_IMPLEMENTED = function() {};
     ext.new_person = api.new_person.bind(api);
     ext.get_person = api.get_person.bind(api);
     ext.update_person = function(feel, inout, value, secret, callback) { api.update_person(secret, feel+'_'+inout, value, callback);}
-	ext.get_classrom_feelings = function(feel, inout) { return api.classroom ? api.classroom[feel+'_'+inout] : ''; }
+	ext.get_classroom_feelings = function(feel, inout) { return api.classroom ? api.classroom[feel+'_'+inout] : ''; }
 	
 
     // Block and block menu descriptions
