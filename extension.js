@@ -105,10 +105,10 @@ var NOT_IMPLEMENTED = function() {};
     ext.exit_classroom = NOT_IMPLEMENTED;
 	ext.get_student_ID_string = function() { 
 	if (!api.clasroom) {
-		return "";
+		return "1";
 	}
 	if (api.classroom.people_json.length == 0){
-		return "";
+		return "2";
 	}
 	var string= "";
 	for (var person in api.classroom.person_json){
