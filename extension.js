@@ -115,25 +115,25 @@ var NOT_IMPLEMENTED = function() {};
 	 
 	
     // pet
-    ext.get_pet_needs = function(need) { return api.classroom ? api.classroom[need] : ''; }
-    ext.get_pet_name = function() { return api.classroom ? api.classroom.pet_name : ''; }
-    ext.update_pet = NOT_IMPLEMENTED;
-    ext.set_pet_name = NOT_IMPLEMENTED;
-    ext.add_pet_need = NOT_IMPLEMENTED;
-    ext.switch_pet_needs = NOT_IMPLEMENTED;
+   // ext.get_pet_needs = function(need) { return api.classroom ? api.classroom[need] : ''; }
+   // ext.get_pet_name = function() { return api.classroom ? api.classroom.pet_name : ''; }
+    //ext.update_pet = NOT_IMPLEMENTED;
+    //ext.set_pet_name = NOT_IMPLEMENTED;
+    //ext.add_pet_need = NOT_IMPLEMENTED;
+    //ext.switch_pet_needs = NOT_IMPLEMENTED;
 
     // activities
-    ext.show_all_activities = NOT_IMPLEMENTED;
-    ext.add_activity = NOT_IMPLEMENTED;
-    ext.delete_activity = NOT_IMPLEMENTED;
-    ext.prompt_activity = NOT_IMPLEMENTED;
-    ext.prompt_random_activity = NOT_IMPLEMENTED;
+    //ext.show_all_activities = NOT_IMPLEMENTED;
+   // ext.add_activity = NOT_IMPLEMENTED;
+    //ext.delete_activity = NOT_IMPLEMENTED;
+   // ext.prompt_activity = NOT_IMPLEMENTED;
+   // ext.prompt_random_activity = NOT_IMPLEMENTED;
 
     // avatar
     ext.get_avatar_name = function() { return api.person ? api.person.name : ''; }
     ext.get_avatar_secret = function() { return api.person ? api.person.secret : ''; }
     ext.get_avatar_feelings = function(feel, inout) { return api.person ? api.person[feel+'_'+inout] : ''; }
-    ext.new_teacher = NOT_IMPLEMENTED;
+    //ext.new_teacher = NOT_IMPLEMENTED;
     ext.new_person = api.new_person.bind(api);
     ext.get_person = api.get_person.bind(api);
     ext.update_person = function(feel, inout, value, secret, callback) { api.update_person(secret, feel+'_'+inout, value, callback);}
@@ -147,8 +147,8 @@ var NOT_IMPLEMENTED = function() {};
             // classroom
             ['b', 'avatar ok', 'person_ok'],
             ['b', 'classroom ok', 'classroom_ok'],
-            ['r', 'person error message', 'person_error_message'],
-            ['r', 'classroom error message', 'classroom_error_message'],
+          //  ['r', 'person error message', 'person_error_message'],
+          //  ['r', 'classroom error message', 'classroom_error_message'],
             ['r', 'classroom name', 'classroom_name'],
             ['r', 'classroom id', 'classroom_secret'],
             ['r', 'average %m.attribute %m.in_out for classroom', 'get_classroom_feelings','joy','inside'] ,
@@ -161,19 +161,19 @@ var NOT_IMPLEMENTED = function() {};
 			['r', 'student ID string', 'get_student_ID_string'],
 			
             // pet
-            ['r', '%m.petneeds_noun levels', 'get_pet_needs','food'],
-            ['r', 'pet name', 'get_pet_name'],
-            ['w', "give %n units of %m.petneeds_noun to pet in classroom %n", 'update_pet', 1, 'food'], 
-            ['w', "name classroom pet %n", 'set_pet_name','name'], // teacher-only
-            ['w', "add %m.petneeds_noun need at %m.times", 'add_pet_need', 'food', '2pm'], // teacher-only
-            ['w', "switch %m.petneeds_noun need %m.on_off", 'switch_pet_needs', 'food', 'on'], // teacher-only
+           // ['r', '%m.petneeds_noun levels', 'get_pet_needs','food'],
+           // ['r', 'pet name', 'get_pet_name'],
+          //  ['w', "give %n units of %m.petneeds_noun to pet in classroom %n", 'update_pet', 1, 'food'], 
+           // ['w', "name classroom pet %n", 'set_pet_name','name'], // teacher-only
+          //  ['w', "add %m.petneeds_noun need at %m.times", 'add_pet_need', 'food', '2pm'], // teacher-only
+          //  ['w', "switch %m.petneeds_noun need %m.on_off", 'switch_pet_needs', 'food', 'on'], // teacher-only
 
             // activities
-            ['w', "All activities", 'show_all_activities'],
-            ['w', "Add following activity: %n targeted towards %m.attributes with rules: %n", 'add_activity','game name','sadness', 'description'], // teacher-only
-            ['w', "Delete activity %m.all_activities", 'delete_activity'], // teacher-only
-            ['w', "Prompt activity %m.all_activities", 'prompt_activity'], // teacher-only
-            ['w', "Prompt random activity", 'prompt_random_activity'],
+          //  ['w', "All activities", 'show_all_activities'],
+          //  ['w', "Add following activity: %n targeted towards %m.attributes with rules: %n", 'add_activity','game name','sadness', 'description'], // teacher-only
+           // ['w', "Delete activity %m.all_activities", 'delete_activity'], // teacher-only
+           // ['w', "Prompt activity %m.all_activities", 'prompt_activity'], // teacher-only
+           // ['w', "Prompt random activity", 'prompt_random_activity'],
 
             // 2. avatar-program
             ['r', 'avatar name', 'get_avatar_name'],
