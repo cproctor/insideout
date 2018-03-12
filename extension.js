@@ -116,7 +116,7 @@ var NOT_IMPLEMENTED = function() {};
 	}
 	return string;
 	}
-	
+	 
 	
     // pet
     ext.get_pet_needs = function(need) { return api.classroom ? api.classroom[need] : ''; }
