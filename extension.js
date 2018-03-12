@@ -104,11 +104,11 @@ var NOT_IMPLEMENTED = function() {};
     ext.update_classroom = api.get_classroom.bind(api);
     ext.exit_classroom = NOT_IMPLEMENTED;
 	ext.get_student_ID_string = function() { 
-	if (!api.clasroom) {
-		return "1";
+	if (!api.classroom) {
+		return "";
 	}
 	if (api.classroom.people_json.length == 0){
-		return "2";
+		return "";
 	}
 	var string= "";
 	for (var person in api.classroom.person_json){
