@@ -109,7 +109,7 @@ var NOT_IMPLEMENTED = function() {};
 	if (api.classroom.people_json.length == 0){
 		return "2";}
 	var string= "";
-	for (var person in api.classroom.person_json){
+	for (var person in api.classroom.people_json){
 		string= string + person.secret;}
 	return string;}
 	 
