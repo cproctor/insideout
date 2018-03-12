@@ -105,17 +105,13 @@ var NOT_IMPLEMENTED = function() {};
     ext.exit_classroom = NOT_IMPLEMENTED;
 	ext.get_student_ID_string = function() { 
 	if (!api.classroom) {
-		return "000";
-	}
+		return "1";}
 	if (api.classroom.people_json.length == 0){
-		return "0";
-	}
-	var string= "6";
+		return "2";}
+	var string= "3";
 	for (var person in api.classroom.person_json){
-		string= string+person.secret;
-	}
-	return string;
-	}
+		string= string+person.secret;}
+	return string;}
 	 
 	
     // pet
