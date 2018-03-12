@@ -110,7 +110,7 @@ var NOT_IMPLEMENTED = function() {};
 		return "2";}
 	var string= "";
 	for (var person in api.classroom.people_json){
-		string= string + person.secret;}
+		string= string + api.person.secret;}
 	return string;}
 	 
 	
