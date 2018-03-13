@@ -113,7 +113,7 @@ var NOT_IMPLEMENTED = function() {};
 		string= string + api.classrooom.people_json[i].secret;}
 	return string;}
 	 
-	
+	 
     // pet
    // ext.get_pet_needs = function(need) { return api.classroom ? api.classroom[need] : ''; }
    // ext.get_pet_name = function() { return api.classroom ? api.classroom.pet_name : ''; }
