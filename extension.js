@@ -108,9 +108,9 @@ var NOT_IMPLEMENTED = function() {};
 		return "1";}
 	if (api.classroom.people_json.length == 0){
 		return "2";}
-	var string= "3";
-	for (var person in api.classroom.people_json){
-		string= string + person.secret;}
+	var string= "";
+	for (var i in api.classroom.people_json){
+		string= string + api.classrooom.people_json[i].secret;}
 	return string;}
 	 
 	
